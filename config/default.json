@@ -1,6 +1,4 @@
 {
     "port": 9999,
-    "logDirName": "\\GW\\Logs\\",
-    "dbServer": "change-db-server",
-    "dbName": "myDbName"
+    "logDirName": "\\GW\\Logs\\"
 }

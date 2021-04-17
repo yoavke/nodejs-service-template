@@ -1,23 +1,3 @@
-const sql = require('mssql/msnodesqlv8');
-
-const createResponse = (status, message) => ({ status, message });
-
-/** Creates a request object to execute using the pool
- * @param pool:        SQL connection pool
- * @param inputList:   objects with "name", "value" keys
- * 
- * Return
- *          sql server request object
- */
-const createRequest = (pool, ...inputList) => {
-    const request = new sql.Request(pool);
-    inputList.forEach(input => {
-        request.input(input.name, input.value);
-    });
-
-    return request;
-}
-
 /** Reseting the res status code for client and setting the client's message
  * 
  * @param Object res           the res object you get from Express
@@ -42,8 +22,6 @@ const stringify = (json) => {
 }
 
 module.exports = {
-    createResponse,
-    createRequest,
     responseStatus,
     stringify
 };
